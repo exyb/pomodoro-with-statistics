@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Pomodoro",
+  "version": "0.1.0",
+  "identifier": "io.github.yuanbo7.pomodoro",
+  "build": {
+    "beforeDevCommand": "npm run dev:web",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build:web",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "番茄钟",
+        "width": 1040,
+        "height": 720,
+        "minWidth": 620,
+        "minHeight": 520,
+        "center": true,
+        "resizable": true,
+        "decorations": true,
+        "visible": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: asset: http://asset.localhost; media-src 'self' asset: http://asset.localhost data:; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["appimage", "deb", "rpm"],
+    "category": "Productivity",
+    "shortDescription": "Pomodoro timer with statistics",
+    "longDescription": "A minimalist Pomodoro timer with todo binding, statistics, floating mini mode and a plugin interface.",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.png", "icons/icon.icns", "icons/icon.ico"]
+  }
+}

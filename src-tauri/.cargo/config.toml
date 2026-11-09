@@ -1,0 +1,5 @@
+# The global ~/.cargo/config.toml routes crates.io through a local proxy that is
+# unreliable for cargo's HTTP client (TLS resets / stalled transfers), while the
+# direct connection works. Override it for this project only.
+[http]
+proxy = ""
